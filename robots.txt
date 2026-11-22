@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://tiktokvideodownloader.github.io/sitemap.xml
+Sitemap: https://tiktokvideodownloaderhub.github.io/sitemap.xml
+
