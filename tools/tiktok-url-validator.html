@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TikTok URL Validator</title><meta name="description" content="Check whether a link is a valid TikTok video URL and read its parts."><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>:root{--bg:#0f0f14;--card:#1a1a22;--ink:#f5f5f7;--mut:#b9b9c4;--acc:#25f4ee;--acc2:#fe2c55;--line:#2c2c38}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--acc)}header{background:#000;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+header b{font-size:20px}header b span{color:var(--acc2)}nav a{color:#eee;margin:0 10px;text-decoration:none;font-size:14px}
+.hero{padding:56px 20px 40px;text-align:center;background:linear-gradient(135deg,#000,#1a1a22 55%,#3a0a1e)}
+.hero h1{font-size:clamp(30px,5vw,52px);margin:0 0 12px}.hero p{color:var(--mut);max-width:720px;margin:0 auto 20px;font-size:18px}
+.wrap{max-width:980px;margin:0 auto;padding:20px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin:18px 0}
+input,textarea,select{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:#101018;color:var(--ink);font-size:15px;margin:8px 0}
+button{background:var(--acc2);color:#fff;border:0;padding:12px 22px;border-radius:10px;font-size:16px;cursor:pointer;font-weight:700}
+button.sec{background:#222;color:var(--acc);border:1px solid var(--acc)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;text-decoration:none;color:var(--ink)}
+.tile img{width:100%;height:140px;object-fit:cover;border-radius:8px}.tile h3{font-size:16px;margin:10px 0 6px;color:#fff}.tile p{font-size:13px;color:var(--mut);margin:0}
+.note{background:#2a2113;border:1px solid #6b5316;border-radius:10px;padding:12px;font-size:14px;color:#ffe9a8}
+.result img,.result video{max-width:100%;border-radius:10px}footer{padding:26px 20px;text-align:center;color:var(--mut);font-size:13px;border-top:1px solid var(--line)}
+h2{margin-top:6px}.small{font-size:13px;color:var(--mut)}@media(max-width:640px){.hero{padding:36px 14px}}
+</style></head><body>
+<header><b>TikTok Video Downloader</b><nav><a href="/index.html">Home</a><a href="/tools/">Tools</a><a href="/guides/">Guides</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a></nav></header>
+<main class="wrap"><h1>TikTok URL Validator</h1><p>Check whether a link is a valid TikTok video URL and read its parts.</p><div class='card'><input id="u" placeholder="Paste a TikTok URL"><button onclick="go()">Validate</button><div id="out"></div>
+<script>function go(){var u=document.getElementById('u').value.trim();var o=document.getElementById('out');if(!u){o.innerHTML='<p>Paste a URL first.</p>';return}var m=u.match(/tiktok\.com\/@([^\/\?]+)\/video\/(\d+)/);var m2=u.match(/vt\.tiktok\.com\//);var m3=u.match(/tiktok\.com\/t\/(\w+)/);if(m){o.innerHTML='<p><b>Valid TikTok video URL.</b></p><p>Creator: @'+m[1]+'</p><p>Video ID: '+m[2]+'</p><p>Short link: https://www.tiktok.com/@'+m[1]+'/video/'+m[2]+'</p>'}else if(m2||m3){o.innerHTML='<p><b>Looks like a TikTok short link.</b> Open it in a browser to expand it to the full video URL, then paste the full URL here to check the video ID.</p>'}else{o.innerHTML='<p><b>Not a valid TikTok video URL.</b> A valid URL looks like https://www.tiktok.com/@username/video/1234567890123456789</p>'}}</script></div><p class='note'>This tool uses the public third-party tikwm API (tikwm.com). Results and download availability depend on that service, and on the video being public.</p><p><a href='/index.html'>Back to home</a></p></main>
+<footer><p>TikTok Video Downloader — Free browser tools and practical guides. <a href="/about.html">About</a> · <a href="/privacy.html">Privacy</a> · <a href="/disclaimer.html">Disclaimer</a> · <a href="/contact.html">Contact</a></p></footer>
+</body></html>
